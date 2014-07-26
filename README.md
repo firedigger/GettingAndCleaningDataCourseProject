@@ -16,3 +16,8 @@ It modifies the data set, doing tasks from the Course Project tasks list. Then i
 The easiest way to read this file into R is
 data <- read.csv(file = "SamsungDataVariableMeans.csv")
 
+The resulting set is tidy because it satisfies the rules:
+1) each observation is a row
+2) each variable is a columns
+3) each unit is a table
+4) variables are descriptive

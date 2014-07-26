@@ -9,16 +9,22 @@ EXTENT OF COLLECTION:  1 data file +  run_analysis.R
 DATA FORMAT: string, numeric
 
 VARIABLES DESCRIPTION
-The variables are taken from the original dataset with some changes to their names to make them more clear.
+The variables are taken from the original dataset and some changes were done:
+Merged the train and test sets.
+Only the measurements for means and stds were taken, others discarded.
+The columns received their name according to features.txt
+A new column with activity label was added according to labels.txt
+Variable names were changed:
+"t" prefix changed to "Time."
+"f" prefix changed to" Frequency."
+"Acc" changed to "Accelerometer."
+"-mean()" changed to "mean"
+"-std()" changed to "std"
+"Gyro" changed to "Gyroscope."
+"Jerk" changed to "Jerk."
+"Mag" changed to "Magnitude."
+Then for each combination of subject and activity there is an observation in the table with mean values for all the variables described above.
 
 Subject# - The number of the subject, according to subject_train.txt and subject_test.txt from original dataset (ranges from 1 to 30)
 Activity - the descriptive name of the activity performed.
-
-The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 'Time.' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (Time.BodyAcc-XYZ and Time.GravityAccelerometer-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
-
-Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (Time.BodyAccJerk-XYZ and Time.BodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (Time.BodyAccelerometer.Magnitude, Time.GravityAccelerometer.Magnitude, Time.BodyAccelerometer.JerkMagnitude, TimeBody.Gyroscope.Magnitude, Time.BodyGyroscope.JerkMagnitude). 
-
-Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing Frequency.BodyAcc-XYZ, Frequency.BodyAccelerometer.Jerk-XYZ, Frequency.BodyGyroscope-XYZ, Frequency.BodyAccelerometerJerkMag, Frequency.BodyGyroscope.Magnitude, Frequency.BodyGyroscope.JerkMag. (Note the 'Frequency.' to indicate frequency domain signals). 
-
-These signals were used to estimate variables of the feature vector for each pattern:  
-'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
+Other variables are signals from smartphone with some transformations. For more info: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
